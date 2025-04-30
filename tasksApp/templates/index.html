@@ -3,10 +3,16 @@
 <h2>All Tasks</h2>
 <ul>
     {% for task in tasks %}
-    <li>
+    <li id="removeList">
         <strong>{{ task.title }}</strong> - {{ task.description }} - 
         {% if task.completed %}✅{% else %}❌{% endif %}
+        <button onclick="removeId()">remove</button>
     </li>
     {% endfor %}
 </ul>
+<script>
+    function removeId(){
+        document.getElementById("removeList").remove()
+    }
+</script>
 {% endblock %}
